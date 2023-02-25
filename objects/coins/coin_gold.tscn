@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://eagyohw7cn31"]
+
+[ext_resource type="PackedScene" uid="uid://blppsq7e750r1" path="res://assets/platformer-kit-2.2/Models/coinGold.glb" id="1_323b3"]
+[ext_resource type="Script" path="res://objects/coins/coin_gold.gd" id="2_uoih8"]
+[ext_resource type="Texture2D" uid="uid://cs02pn4bpvkbn" path="res://assets/particles/star_06.png" id="3_7otwt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3c56"]
+
+[sub_resource type="Gradient" id="Gradient_1ath6"]
+offsets = PackedFloat32Array(0, 0.552529, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.86, 0.75508, 0.3354, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j4whb"]
+gradient = SubResource("Gradient_1ath6")
+
+[sub_resource type="Curve" id="Curve_jy55m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.375, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tb2fa"]
+curve = SubResource("Curve_jy55m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pn5oc"]
+emission_shape = 2
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.5
+scale_curve = SubResource("CurveTexture_tb2fa")
+color_ramp = SubResource("GradientTexture1D_j4whb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xla31"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_7otwt")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_jq32d"]
+material = SubResource("StandardMaterial3D_xla31")
+
+[node name="coinGold" instance=ExtResource("1_323b3")]
+script = ExtResource("2_uoih8")
+
+[node name="coinGold2" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.416433, 0)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_n3c56")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0860255, 0)
+emitting = false
+amount = 12
+lifetime = 1.2
+preprocess = 0.1
+speed_scale = 2.0
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_pn5oc")
+draw_pass_1 = SubResource("QuadMesh_jq32d")

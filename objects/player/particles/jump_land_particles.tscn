@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Texture2D" uid="uid://hdeulb0io36i" path="res://assets/particles/smoke_07.png" id="1_wi5yy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfh57"]
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1.5, 1.5, 1.5, 1)
+albedo_texture = ExtResource("1_wi5yy")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_thuna"]
+material = SubResource("StandardMaterial3D_hfh57")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="Curve" id="Curve_s7gfb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.449857, 0.7), -1.58636, -1.58636, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_umluc"]
+offsets = PackedFloat32Array(0.00374532, 0.29588, 0.996255)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.913725, 1, 1, 1, 0)
+
+[node name="JumpLandParticles" type="CPUParticles3D"]
+explosiveness = 0.98
+mesh = SubResource("QuadMesh_thuna")
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 0.1, 0.1)
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.2
+damping_min = 1.1
+damping_max = 1.3
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_s7gfb")
+color_ramp = SubResource("Gradient_umluc")

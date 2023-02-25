@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="platformer-3d"
+run/main_scene="res://scenes/game/game.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.png"
+
+[autoload]
+
+Audio="*res://autoloads/Audio.tscn"
+
+[display]
+
+window/size/initial_position_type=0
+window/size/initial_position=Vector2i(100, 100)
+
+[input]
+
+quit={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[physics]
+
+3d/default_gravity=25.0
+
+[plugins]
+
+highlighter/shortcut=Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":true,"keycode":72,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+
+highlighter/highlight_style="res://addons/editor-highlighter/highlight_style.tres"
+highlighter/max_depth=20
+highlighter/min_depth=4
+
+[rendering]
+
+environment/defaults/default_environment="res://scenes/environment.tres"

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://d4falbcbkv30r" path="res://assets/background-elements-redux-fix/cloudLayer1.png" id="1_ot6wy"]
+
+[resource]
+transparency = 1
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+albedo_color = Color(0.647059, 0.647059, 0.647059, 1)
+albedo_texture = ExtResource("1_ot6wy")
+emission_texture = ExtResource("1_ot6wy")
+uv1_scale = Vector3(10, 1, 1)
+texture_filter = 0
+disable_receive_shadows = true

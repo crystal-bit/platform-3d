@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" uid="uid://brq2b4kdjiljj" path="res://assets/platformer-kit-2.2/Models/block.glb" id="1_l1jxd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g8nhw"]
+
+[node name="block" instance=ExtResource("1_l1jxd")]
+
+[node name="StaticBody3D" parent="block2" index="0"]
+collision_layer = 2
+
+[node name="CollisionShape3D" parent="block2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_g8nhw")
