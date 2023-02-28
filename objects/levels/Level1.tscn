@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://brcgwdt4hj1qp"]
+[gd_scene load_steps=35 format=3 uid="uid://brcgwdt4hj1qp"]
 
+[ext_resource type="Texture2D" uid="uid://d4falbcbkv30r" path="res://assets/background-elements-redux-fix/cloudLayer1.png" id="1_axnhr"]
 [ext_resource type="PackedScene" path="res://objects/levels/blocks/block.tscn" id="1_q7ec2"]
 [ext_resource type="PackedScene" path="res://objects/levels/blocks/block_long.tscn" id="2_5hwrb"]
 [ext_resource type="PackedScene" uid="uid://bjvo7r2h0ueyf" path="res://assets/platformer-kit-2.2/Models/arrow.glb" id="3_msfg0"]
@@ -36,9 +37,6 @@ void fragment() {
 }
 "
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ykdqo"]
-load_path = "res://.godot/imported/cloudLayer1.png-539a8e2b5a19a246bfb55e54fc3f415e.bptc.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sq6fk"]
 render_priority = 0
 shader = SubResource("Shader_5hboo")
@@ -47,7 +45,7 @@ shader_parameter/uv1_scale = Vector3(10, 1, 1)
 shader_parameter/uv1_offset = null
 shader_parameter/uv2_scale = null
 shader_parameter/uv2_offset = null
-shader_parameter/texture_albedo = SubResource("CompressedTexture2D_ykdqo")
+shader_parameter/texture_albedo = ExtResource("1_axnhr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_08aob"]
 material = SubResource("ShaderMaterial_sq6fk")
@@ -78,9 +76,6 @@ void fragment() {
 }
 "
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_reyrr"]
-load_path = "res://.godot/imported/cloudLayer1.png-539a8e2b5a19a246bfb55e54fc3f415e.bptc.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_354cg"]
 render_priority = 1
 shader = SubResource("Shader_etgto")
@@ -89,7 +84,7 @@ shader_parameter/uv1_scale = Vector3(10, 1, 1)
 shader_parameter/uv1_offset = null
 shader_parameter/uv2_scale = null
 shader_parameter/uv2_offset = null
-shader_parameter/texture_albedo = SubResource("CompressedTexture2D_reyrr")
+shader_parameter/texture_albedo = ExtResource("1_axnhr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_x7cvs"]
 material = SubResource("ShaderMaterial_354cg")
