@@ -138,7 +138,6 @@ environment = ExtResource("2_jklnn")
 camera_attributes = SubResource("CameraAttributesPractical_vqa5a")
 
 [node name="Player" parent="." instance=ExtResource("3_jgxyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 MAX_FALL_VELOCITY = 17.0
 
 [node name="ResetBehaviour" parent="Player" instance=ExtResource("4_xvweo")]

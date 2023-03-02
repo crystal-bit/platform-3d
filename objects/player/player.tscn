@@ -79,8 +79,8 @@ one_shot = true
 
 [node name="JumpLandParticles" parent="." instance=ExtResource("6_raifw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.4)
-visible = false
 emitting = false
+one_shot = true
 explosiveness = 0.95
 randomness = 0.25
 lifetime_randomness = 0.25
