@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://brcgwdt4hj1qp"]
+[gd_scene load_steps=28 format=3 uid="uid://brcgwdt4hj1qp"]
 
 [ext_resource type="Texture2D" uid="uid://d4falbcbkv30r" path="res://assets/background-elements-redux-fix/cloudLayer1.png" id="1_axnhr"]
 [ext_resource type="PackedScene" path="res://objects/levels/blocks/block.tscn" id="1_q7ec2"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://jqgefx8iuipg" path="res://assets/audio/airplane.mp3" id="5_1gatr"]
 [ext_resource type="PackedScene" path="res://objects/flag/flag.tscn" id="5_r025i"]
 [ext_resource type="Texture2D" uid="uid://cpup0sskr7u1n" path="res://assets/particles/smoke_07_whiter.png" id="7_5xlsj"]
-[ext_resource type="Texture2D" uid="uid://cs02pn4bpvkbn" path="res://assets/particles/star_06.png" id="9_n6fv0"]
+[ext_resource type="PackedScene" uid="uid://cjx202wb2knm5" path="res://objects/levels/level1/gpu_particles_3d.tscn" id="11_6qrb8"]
 
 [sub_resource type="Shader" id="Shader_5hboo"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.rc1's StandardMaterial3D.
@@ -219,45 +219,6 @@ _data = {
 "airplane_loop": SubResource("Animation_qugdh")
 }
 
-[sub_resource type="Gradient" id="Gradient_ylifh"]
-offsets = PackedFloat32Array(0, 0.222222, 0.802469, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_rpaot"]
-gradient = SubResource("Gradient_ylifh")
-
-[sub_resource type="Curve" id="Curve_8r7wr"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.227064, 1), 0.0, 0.0, 0, 0, Vector2(0.793578, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_56htf"]
-curve = SubResource("Curve_8r7wr")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_auxcy"]
-emission_shape = 3
-emission_box_extents = Vector3(40, 10, 4)
-spread = 180.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_max = 0.4
-angular_velocity_max = 1.0
-damping_max = 0.05
-angle_max = 180.0
-scale_curve = SubResource("CurveTexture_56htf")
-color_ramp = SubResource("GradientTexture1D_rpaot")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0a7o"]
-transparency = 1
-blend_mode = 1
-shading_mode = 0
-disable_ambient_light = true
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("9_n6fv0")
-disable_receive_shadows = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_87jpg"]
-material = SubResource("StandardMaterial3D_g0a7o")
-size = Vector2(0.3, 0.3)
-
 [node name="Level1" type="Node3D"]
 
 [node name="Background" type="Node3D" parent="."]
@@ -443,11 +404,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 7, 0)
 [node name="coinGold10" parent="Coins" instance=ExtResource("4_0qum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5, 7, 0)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2.5, 0)
-amount = 256
-lifetime = 5.0
-randomness = 0.25
-visibility_aabb = AABB(-27, -7, -2, 54, 14, 4)
-process_material = SubResource("ParticleProcessMaterial_auxcy")
-draw_pass_1 = SubResource("QuadMesh_87jpg")
+[node name="GPUParticles3D" parent="." instance=ExtResource("11_6qrb8")]
