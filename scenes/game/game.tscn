@@ -66,6 +66,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/42/0 = Vector2(0, 0)
 cache/0/32/0/ascent = 0.0
 cache/0/32/0/descent = 0.0
 cache/0/32/0/underline_position = 0.0
@@ -73,14 +74,24 @@ cache/0/32/0/underline_thickness = 0.0
 cache/0/32/0/scale = 1.0
 cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/42/0 = Vector2(0, 0)
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/42/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/42/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/42/0/kerning_overrides/42/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6d14a"]
 font = SubResource("FontFile_518fn")
-font_size = 32
+font_size = 42
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8pmjv"]
+font_size = 26
 font_color = Color(0.74902, 0.74902, 0.74902, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
@@ -167,15 +178,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="GameplayUI" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameplayUI"]
-offset_left = 40.0
-offset_top = 24.0
-offset_right = 118.0
-offset_bottom = 88.0
-theme_override_constants/separation = 8
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 197.0
+offset_bottom = 94.0
+theme_override_constants/separation = 4
 
 [node name="TextureRect" type="TextureRect" parent="GameplayUI/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_d8puv")
+expand_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameplayUI/HBoxContainer"]
 layout_mode = 2
