@@ -23,6 +23,7 @@ Audio="*res://autoloads/Audio.tscn"
 
 window/size/initial_position_type=0
 window/size/initial_position=Vector2i(100, 100)
+window/stretch/mode="canvas_items"
 
 [input]
 
