@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpup0sskr7u1n"
-path.etc2="res://.godot/imported/smoke_07_whiter.png-82828c905e79816221198e19311409e4.etc2.ctex"
+path="res://.godot/imported/smoke_07_whiter.png-82828c905e79816221198e19311409e4.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/particles/smoke_07_whiter.png"
-dest_files=["res://.godot/imported/smoke_07_whiter.png-82828c905e79816221198e19311409e4.etc2.ctex"]
+dest_files=["res://.godot/imported/smoke_07_whiter.png-82828c905e79816221198e19311409e4.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

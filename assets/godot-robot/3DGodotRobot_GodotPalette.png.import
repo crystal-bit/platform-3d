@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3a8nx056gruw"
-path.etc2="res://.godot/imported/3DGodotRobot_GodotPalette.png-5c17cec414783acb4a90efac3699786d.etc2.ctex"
+path="res://.godot/imported/3DGodotRobot_GodotPalette.png-5c17cec414783acb4a90efac3699786d.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://assets/godot-robot/3DGodotRobot_GodotPalette.png"
-dest_files=["res://.godot/imported/3DGodotRobot_GodotPalette.png-5c17cec414783acb4a90efac3699786d.etc2.ctex"]
+dest_files=["res://.godot/imported/3DGodotRobot_GodotPalette.png-5c17cec414783acb4a90efac3699786d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

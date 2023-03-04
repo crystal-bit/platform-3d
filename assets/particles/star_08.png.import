@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/star_08.png-94ee1750c80e845190ba3e3ed1139e92.
 
 [params]
 
-compress/mode=0
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
