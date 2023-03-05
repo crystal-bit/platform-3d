@@ -38,7 +38,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sq6fk"]
-render_priority = 0
+render_priority = -1
 shader = SubResource("Shader_5hboo")
 shader_parameter/albedo = Color(0.921569, 0.94902, 0.960784, 1)
 shader_parameter/uv1_scale = Vector3(10, 1, 1)
