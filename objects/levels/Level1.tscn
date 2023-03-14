@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://brcgwdt4hj1qp"]
+[gd_scene load_steps=29 format=3 uid="uid://brcgwdt4hj1qp"]
 
 [ext_resource type="Texture2D" uid="uid://d4falbcbkv30r" path="res://assets/background-elements-redux-fix/cloudLayer1.png" id="1_axnhr"]
 [ext_resource type="PackedScene" path="res://objects/levels/blocks/block.tscn" id="1_q7ec2"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://jqgefx8iuipg" path="res://assets/audio/airplane.mp3" id="5_1gatr"]
 [ext_resource type="PackedScene" path="res://objects/flag/flag.tscn" id="5_r025i"]
 [ext_resource type="Texture2D" uid="uid://cpup0sskr7u1n" path="res://assets/particles/smoke_07_whiter.png" id="7_5xlsj"]
+[ext_resource type="PackedScene" uid="uid://b52nwn0wddlj8" path="res://objects/levels/blocks/moving_block.tscn" id="9_jlhk4"]
 [ext_resource type="PackedScene" uid="uid://cjx202wb2knm5" path="res://objects/levels/level1/gpu_particles_3d.tscn" id="11_6qrb8"]
 
 [sub_resource type="Shader" id="Shader_5hboo"]
@@ -359,6 +360,9 @@ libraries = {
 "": SubResource("AnimationLibrary_u7jd8")
 }
 
+[node name="moving_block" parent="DynamicProps" instance=ExtResource("9_jlhk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 5, 0)
+
 [node name="Items" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -382,6 +386,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6.5, 0)
 
 [node name="coinGold4" parent="Coins" instance=ExtResource("4_0qum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6.5, 0)
+
+[node name="coinGold6" parent="Coins" instance=ExtResource("4_0qum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 10.5, 0)
+
+[node name="coinGold13" parent="Coins" instance=ExtResource("4_0qum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 11.5, 0)
 
 [node name="coinGold5" parent="Coins" instance=ExtResource("4_0qum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, 0)
