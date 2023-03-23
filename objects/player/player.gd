@@ -18,7 +18,9 @@ const COYOTE_FRAMES = 10
 var coyote_frames: int = COYOTE_FRAMES
 var jumped = false
 var falling = false
-
+var falling_and_jumped = false
+var input_buffer_frames = 0
+const MAX_INPUT_BUFFER_FRAMES: int = 5
 
 func _physics_process(delta):
 	var direction = _get_direction()
@@ -34,6 +36,7 @@ func _physics_process(delta):
 
 func handle_movement(direction, delta):
 	falling = !is_on_floor() and !jumped
+	falling_and_jumped = !is_on_floor() and jumped
 	# vertical
 	if not is_on_floor():
 		if Input.is_action_pressed("ui_accept"):
@@ -44,13 +47,18 @@ func handle_movement(direction, delta):
 			velocity.y = -min(abs(velocity.y), abs(MAX_FALL_VELOCITY))
 			if falling:
 				coyote_frames -= 1
+			if falling_and_jumped:
+				input_buffer_frames -= 1
 	else:
 		jumped = false
 		coyote_frames = COYOTE_FRAMES
-	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or (falling and coyote_frames > 0)):
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or (falling and coyote_frames > 0)) or (is_on_floor() and input_buffer_frames > 0):
 		velocity.y = JUMP_VELOCITY
 		$Sfx/JumpSfx.play()
 		jumped = true
+		input_buffer_frames = 0
+	if Input.is_action_just_pressed("ui_accept") and falling_and_jumped:
+		input_buffer_frames = MAX_INPUT_BUFFER_FRAMES
 	# horizontal
 	if direction:
 		speed = lerp(speed, SPEED, delta * 15.)
