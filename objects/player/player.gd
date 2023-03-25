@@ -36,7 +36,7 @@ func _physics_process(delta):
 
 func handle_movement(direction, delta):
 	falling = !is_on_floor() and !jumped
-	falling_and_jumped = !is_on_floor() and jumped
+	falling_and_jumped = !is_on_floor() and jumped and velocity.y <= 0
 	# vertical
 	if not is_on_floor():
 		if Input.is_action_pressed("ui_accept"):
@@ -52,12 +52,15 @@ func handle_movement(direction, delta):
 	else:
 		jumped = false
 		coyote_frames = COYOTE_FRAMES
-	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or (falling and coyote_frames > 0)) or (is_on_floor() and input_buffer_frames > 0):
+
+	var can_jump = is_on_floor() or (falling and coyote_frames > 0)
+	var jump_requested = Input.is_action_just_pressed("ui_accept") or input_buffer_frames > 0
+	if jump_requested and can_jump:
 		velocity.y = JUMP_VELOCITY
 		$Sfx/JumpSfx.play()
 		jumped = true
 		input_buffer_frames = 0
-	if Input.is_action_just_pressed("ui_accept") and falling_and_jumped:
+	if Input.is_action_just_pressed("ui_accept") and !is_on_floor():
 		input_buffer_frames = MAX_INPUT_BUFFER_FRAMES
 	# horizontal
 	if direction:
