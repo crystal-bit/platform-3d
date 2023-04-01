@@ -10,4 +10,6 @@ config_version=5
 
 [application]
 
+config/name="platform-tutorial"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.0")
