@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbtnbh21lburf"]
+[gd_scene load_steps=9 format=3 uid="uid://bbtnbh21lburf"]
+
+[ext_resource type="Material" uid="uid://rh34e3fs4skp" path="res://level_material.tres" id="1_n87rx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jqg2"]
 sky_top_color = Color(0.384314, 0.454902, 0.54902, 1)
 sky_horizon_color = Color(0.642157, 0.659804, 0.683334, 1)
-ground_bottom_color = Color(0.184314, 0.184314, 0.184314, 1)
-ground_horizon_color = Color(0.642157, 0.659804, 0.683334, 1)
+ground_bottom_color = Color(0.643137, 0.658824, 0.682353, 1)
+ground_horizon_color = Color(0.643137, 0.658824, 0.682353, 1)
 
 [sub_resource type="Sky" id="Sky_aw8gu"]
 sky_material = SubResource("ProceduralSkyMaterial_6jqg2")
@@ -15,10 +17,18 @@ sky = SubResource("Sky_aw8gu")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1mdx"]
+albedo_color = Color(0.247059, 0.698039, 0.407843, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2ft3q"]
+material = SubResource("StandardMaterial3D_w1mdx")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rg2bj"]
+material = ExtResource("1_n87rx")
 size = Vector2(20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhtow"]
+size = Vector3(2, 2, 2)
 
 [node name="Node3D" type="Node3D"]
 
@@ -29,12 +39,22 @@ environment = SubResource("Environment_f5wl3")
 transform = Transform3D(-0.817077, -0.356747, 0.452899, 0.553564, -0.704961, 0.443392, 0.161097, 0.612994, 0.77349, 7.45405, 0, 11.0694)
 shadow_enabled = true
 
-[node name="Capsule" type="MeshInstance3D" parent="."]
+[node name="Player" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_2ft3q")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_rg2bj")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
+material_override = ExtResource("1_n87rx")
+mesh = SubResource("BoxMesh_yhtow")
+
+[node name="Box2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 1, 0)
+material_override = ExtResource("1_n87rx")
+mesh = SubResource("BoxMesh_yhtow")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.7176)
