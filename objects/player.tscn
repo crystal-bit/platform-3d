@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://cspsftefkddo3"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_2d105"]
 
