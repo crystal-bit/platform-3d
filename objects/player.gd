@@ -8,7 +8,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _physics_process(delta):
-	velocity.y = velocity.y - gravity * delta
+	if !is_on_floor():
+		velocity.y = velocity.y - gravity * delta
 	
 	if Input.is_action_pressed("player_move_left"):
 		velocity.x = -SPEED
@@ -17,7 +18,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED / 5)
 		
-	if Input.is_action_just_pressed("player_jump"):
+	if is_on_floor() and Input.is_action_just_pressed("player_jump"):
 		velocity.y = JUMP_VELOCITY
 	
 	move_and_slide()
