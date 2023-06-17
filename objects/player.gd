@@ -15,7 +15,10 @@ func _ready():
 	
 func _physics_process(delta):
 	if !is_on_floor():
-		velocity.y = velocity.y - gravity * delta
+		if velocity.y < 0:
+			velocity.y = velocity.y - gravity * 1.3 * delta
+		else:
+			velocity.y = velocity.y - gravity * delta
 	
 	if Input.is_action_pressed("player_move_left"):
 		velocity.x = -SPEED
