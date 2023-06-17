@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnqe37j0if8oq"]
+[gd_scene load_steps=11 format=3 uid="uid://bnqe37j0if8oq"]
 
+[ext_resource type="Script" path="res://objects/camera-follow-target.gd" id="1_jj8oj"]
 [ext_resource type="PackedScene" uid="uid://cspsftefkddo3" path="res://objects/player.tscn" id="1_yrwpo"]
 [ext_resource type="Material" uid="uid://rh34e3fs4skp" path="res://objects/level_material.tres" id="3_ygqb1"]
 
@@ -40,6 +41,13 @@ environment = SubResource("Environment_f5wl3")
 transform = Transform3D(-0.817077, -0.356747, 0.452899, 0.553564, -0.704961, 0.443392, 0.161097, 0.612994, 0.77349, 7.45405, 0, 11.0694)
 shadow_enabled = true
 
+[node name="CameraFollowTarget" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_jj8oj")
+target = NodePath("../Player")
+
+[node name="Camera3D" type="Camera3D" parent="CameraFollowTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.7176)
+
 [node name="Player" parent="." instance=ExtResource("1_yrwpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.39717, 0)
 
@@ -76,6 +84,3 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box2"]
 shape = SubResource("BoxShape3D_o65ds")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.7176)

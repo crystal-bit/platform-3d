@@ -3,10 +3,16 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 17.5
+const DEATH_POSITION_Y = -10
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var initial_position: Vector3
 
 
+func _ready():
+	initial_position = position
+	
+	
 func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y = velocity.y - gravity * delta
@@ -22,3 +28,6 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 	
 	move_and_slide()
+	
+	if position.y < DEATH_POSITION_Y:
+		position = initial_position
