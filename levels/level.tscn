@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://b665tneye6s5r"]
+
+[ext_resource type="PackedScene" uid="uid://t8f6itec3cmw" path="res://objects/props/floor.tscn" id="1_8wuq5"]
+[ext_resource type="PackedScene" uid="uid://djexmutgwyl5u" path="res://objects/props/box.tscn" id="2_uh0wm"]
+[ext_resource type="PackedScene" uid="uid://d3lul4u7xcyff" path="res://objects/props/platform.tscn" id="3_53p07"]
+[ext_resource type="PackedScene" uid="uid://dleixnlnt7yrp" path="res://objects/coin/coin.tscn" id="4_gta60"]
+
+[node name="Level" type="Node3D"]
+metadata/_edit_lock_ = true
+
+[node name="Floor" parent="." instance=ExtResource("1_8wuq5")]
+
+[node name="Floor2" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Floor15" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Floor16" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Floor17" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+
+[node name="Floor18" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="Floor3" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Floor4" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="Floor5" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="Floor6" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="Floor7" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="Floor8" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="Floor9" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+
+[node name="Floor10" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="Floor11" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="Floor12" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+
+[node name="Floor13" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+
+[node name="Floor14" parent="." instance=ExtResource("1_8wuq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 0)
+
+[node name="Box" parent="." instance=ExtResource("2_uh0wm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 0)
+
+[node name="Platform" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 6, 0)
+
+[node name="Platform2" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 6, 0)
+
+[node name="Platform3" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 6, 0)
+
+[node name="Platform4" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 8, 0)
+
+[node name="Platform5" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 8, 0)
+
+[node name="Platform6" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 12, 0)
+
+[node name="Platform7" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 15, 0)
+
+[node name="Platform8" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 15, 0)
+
+[node name="Platform9" parent="." instance=ExtResource("3_53p07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 15, 0)
+
+[node name="Coin" parent="." instance=ExtResource("4_gta60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45587, 1.992, 0)
+
+[node name="Coin2" parent="." instance=ExtResource("4_gta60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73781, 1.992, 0)
+
+[node name="Coin3" parent="." instance=ExtResource("4_gta60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80113, 4.56023, 0.08508)

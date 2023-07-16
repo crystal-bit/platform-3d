@@ -1,5 +1,5 @@
+class_name Player
 extends CharacterBody3D
-
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 17.5
@@ -18,7 +18,7 @@ func _ready():
 	initial_position = position
 	rotation_degrees.y = ROTATION_DEGREES_RIGHT
 	anims.play("Idle")
-	anims.connect("animation_started", func(a): print("started ", a))
+#	anims.connect("animation_started", func(a): print("started ", a))
 
 
 func _physics_process(delta):

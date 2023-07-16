@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dleixnlnt7yrp"]
+
+[ext_resource type="PackedScene" uid="uid://b2hgifqkxl877" path="res://assets/platformer-kit-2.2/Models/coinGold.glb" id="1_p8fy1"]
+[ext_resource type="Script" path="res://objects/coin/coin.gd" id="1_rme20"]
+[ext_resource type="AudioStream" uid="uid://sa38hnl2xfr0" path="res://assets/audio/coin.wav" id="3_tyyb2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwp0y"]
+
+[node name="Coin" type="Area3D" groups=["coins"]]
+script = ExtResource("1_rme20")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rwp0y")
+
+[node name="coinGold" parent="." instance=ExtResource("1_p8fy1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.8, 0)
+
+[node name="CoinSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tyyb2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnqe37j0if8oq"]
+[gd_scene load_steps=8 format=3 uid="uid://bnqe37j0if8oq"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_82t8f"]
 [ext_resource type="Script" path="res://objects/camera-follow-target.gd" id="1_jj8oj"]
 [ext_resource type="PackedScene" uid="uid://cspsftefkddo3" path="res://objects/player.tscn" id="1_yrwpo"]
-[ext_resource type="PackedScene" uid="uid://t8f6itec3cmw" path="res://objects/props/floor.tscn" id="3_b8i2n"]
-[ext_resource type="PackedScene" uid="uid://djexmutgwyl5u" path="res://objects/props/box.tscn" id="4_qb5ni"]
-[ext_resource type="PackedScene" uid="uid://d3lul4u7xcyff" path="res://objects/props/platform.tscn" id="5_ihllc"]
+[ext_resource type="PackedScene" uid="uid://b665tneye6s5r" path="res://levels/level.tscn" id="4_s4u0q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jqg2"]
 sky_top_color = Color(0.384314, 0.454902, 0.54902, 1)
@@ -22,6 +21,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_82t8f")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f5wl3")
@@ -40,88 +40,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.7176)
 [node name="Player" parent="." instance=ExtResource("1_yrwpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.39717, 0)
 
-[node name="Level" type="Node3D" parent="."]
-metadata/_edit_lock_ = true
-
-[node name="Floor" parent="Level" instance=ExtResource("3_b8i2n")]
-
-[node name="Floor2" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="Floor15" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="Floor16" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="Floor17" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
-
-[node name="Floor18" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
-
-[node name="Floor3" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-
-[node name="Floor4" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
-
-[node name="Floor5" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-
-[node name="Floor6" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
-
-[node name="Floor7" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
-
-[node name="Floor8" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
-
-[node name="Floor9" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
-
-[node name="Floor10" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
-
-[node name="Floor11" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
-
-[node name="Floor12" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
-
-[node name="Floor13" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
-
-[node name="Floor14" parent="Level" instance=ExtResource("3_b8i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 0)
-
-[node name="Box" parent="Level" instance=ExtResource("4_qb5ni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 0)
-
-[node name="Platform" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 6, 0)
-
-[node name="Platform2" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 6, 0)
-
-[node name="Platform3" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 6, 0)
-
-[node name="Platform4" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 8, 0)
-
-[node name="Platform5" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 8, 0)
-
-[node name="Platform6" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 12, 0)
-
-[node name="Platform7" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 15, 0)
-
-[node name="Platform8" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 15, 0)
-
-[node name="Platform9" parent="Level" instance=ExtResource("5_ihllc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 15, 0)
+[node name="Level" parent="." instance=ExtResource("4_s4u0q")]
