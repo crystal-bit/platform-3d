@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cspsftefkddo3"]
+[gd_scene load_steps=8 format=3 uid="uid://cspsftefkddo3"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_2d105"]
+[ext_resource type="PackedScene" uid="uid://e7eirnamgwed" path="res://assets/godot-robot/3DGodotRobot.glb" id="2_nysd4"]
+[ext_resource type="AudioStream" uid="uid://cp5mgkavnj208" path="res://assets/audio/jump.wav" id="3_kqy8m"]
+[ext_resource type="AudioStream" uid="uid://dmsflhyl2qf8w" path="res://assets/audio/walk.wav" id="4_7h7r7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4i6ba"]
 
@@ -21,4 +24,36 @@ shape = SubResource("CapsuleShape3D_4i6ba")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_2ft3q")
+
+[node name="3DGodotRobot" parent="." instance=ExtResource("2_nysd4")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+
+[node name="Skeleton3D" parent="3DGodotRobot/RobotArmature" index="0"]
+bones/0/position = Vector3(1.2868e-10, 0.850103, 0.0298551)
+bones/1/rotation = Quaternion(0.0284811, -0.253819, 0.0150622, 0.966715)
+bones/4/position = Vector3(3.73622e-10, 0.151501, -0.011741)
+bones/4/rotation = Quaternion(0.0829047, 0.256284, -0.0130248, 0.962951)
+bones/9/rotation = Quaternion(-0.61861, -0.593663, -0.356177, 0.371516)
+bones/10/rotation = Quaternion(-0.0284195, 0.741533, -0.076768, 0.665904)
+bones/11/rotation = Quaternion(0.499648, -0.0641672, 0.0704464, 0.860971)
+bones/13/rotation = Quaternion(-0.0740713, 0.0470201, 0.709967, 0.698748)
+bones/14/rotation = Quaternion(-0.181185, -0.718637, 0.212461, 0.636862)
+bones/15/rotation = Quaternion(0.422536, 0.0700751, -0.0645724, 0.901323)
+bones/17/rotation = Quaternion(0.988054, 0.0216321, -0.00149392, -0.152578)
+bones/17/scale = Vector3(1.00011, 1, 1.00006)
+bones/18/rotation = Quaternion(0.583002, 0.0130452, 0.0192745, 0.812137)
+bones/19/rotation = Quaternion(-0.272273, 0.00133653, -0.00569497, 0.962202)
+bones/21/rotation = Quaternion(0.792078, -0.013852, 0.0166435, 0.610036)
+bones/21/scale = Vector3(1.00011, 1, 1.00006)
+bones/22/rotation = Quaternion(0.351693, -0.0101158, -0.0236462, 0.935762)
+bones/23/rotation = Quaternion(-0.457257, -0.00240612, 0.00530906, 0.889315)
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kqy8m")
+
+[node name="WalkSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7h7r7")
+
+[editable path="3DGodotRobot"]
