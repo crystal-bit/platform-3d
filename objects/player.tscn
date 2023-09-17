@@ -16,7 +16,6 @@ material = SubResource("StandardMaterial3D_w1mdx")
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_2d105")
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

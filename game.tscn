@@ -38,6 +38,23 @@ target = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.7176)
 
 [node name="Player" parent="." instance=ExtResource("1_yrwpo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.39717, 0)
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 23.4102, 6.40935, 0.00703621)
 
 [node name="Level" parent="." instance=ExtResource("4_s4u0q")]
+
+[node name="Coin" parent="Level" index="28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.05093, 2.05698, 0)
+
+[node name="Coin4" parent="Level" index="32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5197, 8.992, 0)
+
+[node name="Coin5" parent="Level" index="33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1777, 4.34731, 0)
+
+[node name="Coin2" parent="Level" index="34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 5.44831, 0)
+
+[node name="Coin3" parent="Level" index="35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8011, 7.10641, 0.08508)
+
+[editable path="Level"]

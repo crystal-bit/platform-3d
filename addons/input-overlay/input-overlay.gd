@@ -16,7 +16,7 @@ func on_main_screen_changed(scrn):
 		panel.enable()
 	else:
 		panel.disable()
-	
+
 
 func _exit_tree():
 	var base_control := get_editor_interface().get_base_control()
@@ -27,4 +27,3 @@ func _exit_tree():
 func _input(event):
 	if panel:
 		panel.receive_input(event)
-	
