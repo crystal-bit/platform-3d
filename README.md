@@ -2,7 +2,7 @@
 
 Simple 3D platformer with 2.5D gameplay.
 
-Made for a tutorial on 3D gamedev with Godot Engine.
+[Made for a tutorial on 3D gamedev with Godot Engine](https://www.youtube.com/watch?v=q6Wl6OU7FpU&list=PLaCq3HqKQR6q5FwkeCkbMmY90mDeKhfQ9)
 
 This is not supposed to be a polished project right now.
 
