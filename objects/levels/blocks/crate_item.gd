@@ -6,7 +6,6 @@ enum CRATE_TYPE {
 	COIN
 }
 
-signal coin_collected
 
 @export var crate_type: CRATE_TYPE = CRATE_TYPE.BASE
 @onready var coin: Node3D = $coinGold
@@ -14,6 +13,7 @@ signal coin_collected
 
 func _ready():
 	if crate_type == CRATE_TYPE.COIN:
+		GameState.add_coin_to_count(2)
 		set_meta('coins', 2)
 	else:
 		$coinGold.queue_free()
@@ -28,7 +28,7 @@ func hit():
 		CRATE_TYPE.COIN:
 			$coinGold/AnimationPlayer.stop()
 			$coinGold/AnimationPlayer.play("appear")
-			emit_signal("coin_collected")
+			GameState.player_got_coin()
 
 			if get_meta('coins') > 1:
 				set_meta('coins', get_meta('coins') - 1)

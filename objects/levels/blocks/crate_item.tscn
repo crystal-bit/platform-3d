@@ -180,6 +180,7 @@ _data = {
 
 [node name="Crate" type="StaticBody3D" groups=["crates"]]
 script = ExtResource("2_nyaxg")
+crate_type = null
 metadata/type = "crate"
 
 [node name="crateItem" parent="." instance=ExtResource("2_sjado")]
