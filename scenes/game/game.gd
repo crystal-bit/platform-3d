@@ -5,6 +5,10 @@ extends Node3D
 @onready var ui = $GameplayUI
 
 
+@onready var current_coins_label = %Score/CurrentCoins
+@onready var total_coins_label = %Score/TotalCoins
+
+
 var flag: Node3D
 
 
@@ -13,10 +17,8 @@ func _ready():
 	flag = flags[0]
 	if flag and flag is Flag:
 		flag.connect("level_complete", on_level_completed, CONNECT_ONE_SHOT)
-	player.get_node("CoinArea").connect("coin_collected", _on_coin_collected)
-	for crate in get_tree().get_nodes_in_group("crates"):
-		if crate.has_meta("coins"):
-			crate.connect("coin_collected", _on_coin_collected)
+	GameState.connect("state_updated", _on_coin_collected)
+	total_coins_label.text = "/ " + str(GameState.total_coin_amount())
 
 
 func on_level_completed():
@@ -42,9 +44,9 @@ func on_level_completed():
 
 
 func _on_victory_screen_restart_button_pressed():
+	GameState.reset_state()
 	get_tree().reload_current_scene()
 
 
 func _on_coin_collected():
-	var coins_label = ui.get_node("HBoxContainer/HBoxContainer/CoinsCount")
-	coins_label.text = str(int(coins_label.text) + 1)
+	current_coins_label.text = str(GameState.current_coin_amount())

@@ -189,15 +189,16 @@ layout_mode = 2
 texture = ExtResource("8_d8puv")
 expand_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GameplayUI/HBoxContainer"]
+[node name="Score" type="HBoxContainer" parent="GameplayUI/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CoinsCount" type="Label" parent="GameplayUI/HBoxContainer/HBoxContainer"]
+[node name="CurrentCoins" type="Label" parent="GameplayUI/HBoxContainer/Score"]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_6d14a")
 
-[node name="Label" type="Label" parent="GameplayUI/HBoxContainer/HBoxContainer"]
+[node name="TotalCoins" type="Label" parent="GameplayUI/HBoxContainer/Score"]
 layout_mode = 2
 text = " / 13"
 label_settings = SubResource("LabelSettings_8pmjv")

@@ -13,4 +13,5 @@ func _process(delta):
 		if !$GameoverSfx.playing:
 			$GameoverSfx.play()
 			await $GameoverSfx.finished
+			GameState.reset_state()
 			get_tree().reload_current_scene()
