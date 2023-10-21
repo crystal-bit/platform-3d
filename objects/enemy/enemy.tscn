@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://bc6fsun44u62q"]
+[gd_scene load_steps=25 format=3 uid="uid://bc6fsun44u62q"]
 
 [ext_resource type="Script" path="res://objects/enemy/enemy.gd" id="1_ml3x5"]
+[ext_resource type="AudioStream" uid="uid://d2dvievpu53a5" path="res://assets/audio/enemy_die.wav" id="2_6cgug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yb7fa"]
 resource_name = "Main"
@@ -1076,8 +1077,9 @@ _data = {
 "Yes": SubResource("Animation_0ikas")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_x1j0p"]
-radius = 0.791521
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2jjui"]
+radius = 0.741329
+height = 1.58522
 
 [node name="enemy" type="CharacterBody3D" groups=["enemies"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -1161,11 +1163,15 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.717531, 0)
-shape = SubResource("SphereShape3D_x1j0p")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.654102, 0)
+shape = SubResource("CapsuleShape3D_2jjui")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 1)
 collision_mask = 6
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 5
+
+[node name="die_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6cgug")
+volume_db = -12.0

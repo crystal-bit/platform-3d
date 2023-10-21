@@ -22,17 +22,21 @@ var falling_and_jumped = false
 var input_buffer_frames = 0
 const MAX_INPUT_BUFFER_FRAMES: int = 5
 
+var is_dead = false
+
 func _physics_process(delta):
 	var direction = _get_direction()
+
 	handle_movement(direction, delta)
 	update_animations()
+	
 	var prev_velocity = velocity
 	var collided = move_and_slide()
 	if collided:
 		handle_collision(prev_velocity)
+
 	else:
 		update_layer()
-
 
 func handle_movement(direction, delta):
 	falling = !is_on_floor() and !jumped
@@ -115,3 +119,18 @@ func on_crate_hit(crate):
 	var body = $TopRay.get_collider()
 	if body == crate:
 		crate.hit()
+
+
+func _on_bump_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("enemies"):
+		if body.has_method("die"):
+			body.die()
+			velocity.y = JUMP_VELOCITY
+			$Sfx/JumpSfx.play()
+			$JumpLandParticles.restart()
+
+func _on_die_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("enemies"):
+		set_physics_process(false)
+		anims.play("Hurt")
+		is_dead = true

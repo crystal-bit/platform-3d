@@ -9,7 +9,7 @@ func _ready():
 func _process(delta):
 	if !player:
 		return
-	if player.position.y < -8:
+	if player.position.y < -8 or player.is_dead:
 		if !$GameoverSfx.playing:
 			$GameoverSfx.play()
 			await $GameoverSfx.finished
