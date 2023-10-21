@@ -25,3 +25,4 @@ MIT
 - 3D models, Particles, Background elements: http://www.kenney.nl/
 - Airplane model: made with https://kenney.nl/tools/assetforge
 - Character: https://captainripley.itch.io/godot-3d-robot-character
+- Enemy model: https://quaternius.itch.io/ultimate-platformer-pack
