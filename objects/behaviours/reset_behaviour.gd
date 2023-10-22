@@ -12,6 +12,6 @@ func _process(delta):
 	if player.position.y < -8 or player.is_dead:
 		if !$GameoverSfx.playing:
 			$GameoverSfx.play()
-			await $GameoverSfx.finished
+			await get_tree().create_timer(.45).timeout
 			GameState.reset_state()
 			get_tree().reload_current_scene()
