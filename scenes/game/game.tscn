@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dy4317h5546fu"]
+[gd_scene load_steps=23 format=3 uid="uid://dy4317h5546fu"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_jrfsd"]
 [ext_resource type="Environment" uid="uid://dgfqigrf3x07f" path="res://scenes/environment.tres" id="2_jklnn"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b5rnpws8keu5u" path="res://assets/audio/victory.wav" id="8_wmvjy"]
 [ext_resource type="PackedScene" uid="uid://dbbhg4q1khlp" path="res://scenes/game/ui/VictoryScreen.tscn" id="9_653tu"]
 [ext_resource type="Script" path="res://utils/quit_shortcut.gd" id="10_6xbkv"]
+[ext_resource type="PackedScene" uid="uid://bc6fsun44u62q" path="res://objects/enemy/enemy.tscn" id="12_2k14u"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vqa5a"]
 dof_blur_far_enabled = true
@@ -224,5 +225,16 @@ libraries = {
 
 [node name="QuitShortcut" type="Node" parent="."]
 script = ExtResource("10_6xbkv")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="enemy" parent="Enemies" instance=ExtResource("12_2k14u")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 16.3441, 0, -0.00240135)
+
+[node name="enemy2" parent="Enemies" instance=ExtResource("12_2k14u")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.98352, 4.51674, -0.000929594)
+
+[node name="enemy3" parent="Enemies" instance=ExtResource("12_2k14u")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.93767, 0, 0)
 
 [connection signal="restart_button_pressed" from="VictoryScreen" to="." method="_on_victory_screen_restart_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjfqx05kp4avr"]
+[gd_scene load_steps=16 format=3 uid="uid://bjfqx05kp4avr"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_g3451"]
 [ext_resource type="PackedScene" uid="uid://bqxlmclhphlva" path="res://objects/player/3d_godot_robot.tscn" id="2_0d78w"]
@@ -19,34 +19,39 @@ height = 1.02679
 [sub_resource type="BoxShape3D" id="BoxShape3D_eqdk7"]
 size = Vector3(0.402775, 0.898523, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_es5us"]
+size = Vector3(0.7, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gph4t"]
+size = Vector3(0.7, 0.3, 0.5)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_g3451")
 
 [node name="3DGodotRobot" parent="." instance=ExtResource("2_0d78w")]
 
 [node name="Skeleton3D" parent="3DGodotRobot/RobotArmature" index="0"]
-bones/0/position = Vector3(9.11925e-11, 0.801638, 0.0298551)
-bones/0/rotation = Quaternion(0.22764, 1.30329e-07, 2.42508e-08, 0.973745)
-bones/1/rotation = Quaternion(-0.0498005, 0.873288, -0.0341878, 0.483445)
-bones/4/position = Vector3(0.0153125, 0.226229, -0.0180803)
-bones/4/rotation = Quaternion(-0.003922, -0.817637, -0.214368, 0.534323)
+bones/0/position = Vector3(3.948e-11, 0.861288, 0.0298551)
+bones/1/rotation = Quaternion(0.029449, -1.08086e-08, 7.55902e-09, 0.999566)
+bones/4/position = Vector3(1.09444e-09, 0.151501, -0.011741)
+bones/4/rotation = Quaternion(0.00540027, -1.66589e-07, -3.96698e-10, 0.999985)
 bones/8/position = Vector3(1.05937e-07, 0.0611572, 0.418553)
+bones/8/rotation = Quaternion(0.00393965, 8.60751e-08, -6.58016e-10, 0.999992)
 bones/9/rotation = Quaternion(-0.523067, -0.457802, -0.521926, 0.49438)
-bones/10/rotation = Quaternion(0.0118684, 0.713193, -0.0882399, 0.69529)
+bones/10/rotation = Quaternion(-0.356442, 0.617847, -0.433107, 0.551029)
 bones/11/rotation = Quaternion(-0.0175778, -0.091351, 0.0271132, 0.995294)
 bones/13/rotation = Quaternion(-0.523067, 0.457802, 0.521926, 0.49438)
-bones/14/rotation = Quaternion(0.154941, -0.696261, -0.0532773, 0.698839)
+bones/14/rotation = Quaternion(-0.356442, -0.617847, 0.433107, 0.551029)
 bones/15/rotation = Quaternion(-0.0175778, 0.091351, -0.0271132, 0.995294)
-bones/17/rotation = Quaternion(0.982647, 0.0216686, -0.000818451, -0.184216)
+bones/17/rotation = Quaternion(0.991415, 0.0203395, -0.00748663, 0.128945)
 bones/18/rotation = Quaternion(0.249628, 0.00871767, 0.024974, 0.967981)
 bones/19/rotation = Quaternion(-0.608714, 0.00331542, -0.0047912, 0.793369)
-bones/21/rotation = Quaternion(0.849597, -0.015481, 0.0151655, 0.526987)
-bones/22/rotation = Quaternion(0.458891, -0.0115142, -0.0218849, 0.888149)
-bones/23/rotation = Quaternion(-0.623173, -0.0034034, 0.00472914, 0.782063)
+bones/21/rotation = Quaternion(0.991415, -0.0203396, 0.00748669, 0.128945)
+bones/22/rotation = Quaternion(0.249628, -0.00871764, -0.024974, 0.967981)
+bones/23/rotation = Quaternion(-0.608714, -0.00331543, 0.00479124, 0.793369)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999408, 0.0343937, 0, -0.0343937, 0.999408, 0, 0.544559, 0)
-visible = false
 shape = SubResource("CapsuleShape3D_wffnu")
 
 [node name="TopRay" type="RayCast3D" parent="."]
@@ -56,7 +61,6 @@ target_position = Vector3(0, 0.5, 0)
 debug_shape_thickness = 4
 
 [node name="CoinArea" type="Area3D" parent="."]
-visible = false
 script = ExtResource("3_e3qjd")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -100,6 +104,24 @@ one_shot = true
 [node name="JumpSfx" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource("10_m2l3d")
 
+[node name="DieArea" type="Area3D" parent="."]
+collision_mask = 4
+linear_damp = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DieArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537828, 0)
+shape = SubResource("BoxShape3D_es5us")
+
+[node name="BumpArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000890136, -0.0946173, -0.00029248)
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BumpArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.05, 2.08165e-12)
+shape = SubResource("BoxShape3D_gph4t")
+
 [connection signal="area_entered" from="CoinArea" to="CoinArea" method="_on_area_entered"]
+[connection signal="body_entered" from="DieArea" to="." method="_on_die_area_body_entered"]
+[connection signal="body_entered" from="BumpArea" to="." method="_on_bump_area_body_entered"]
 
 [editable path="3DGodotRobot"]
