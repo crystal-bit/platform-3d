@@ -13,3 +13,9 @@ func _ready():
 func _physics_process(delta):
 	position.x = lerp(position.x, target.position.x, delta * lerp_factor_x)
 	position.y = lerp(position.y, target.position.y, delta * lerp_factor_y)
+
+
+func animate_victory():
+	create_tween()\
+		.tween_property($Camera3D, "position:z", $Camera3D.position.z - 3, .6)\
+		.set_trans(Tween.TRANS_QUAD)

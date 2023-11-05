@@ -11,6 +11,7 @@ var initial_position: Vector3
 @onready var anims = $"3DGodotRobot/AnimationPlayer"
 
 const ROTATION_DEGREES_RIGHT = 90
+const ROTATION_DEGREES_FRONT = 0
 const ROTATION_DEGREES_LEFT = -90
 
 
@@ -62,3 +63,10 @@ func _physics_process(delta):
 
 	if position.y < DEATH_POSITION_Y:
 		position = initial_position
+
+
+func victory_animation():
+	set_physics_process(false)
+	rotation_degrees.y = ROTATION_DEGREES_FRONT
+	$VictorySFX.play()
+	anims.play("Emote1")

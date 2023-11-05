@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cspsftefkddo3"]
+[gd_scene load_steps=9 format=3 uid="uid://cspsftefkddo3"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_2d105"]
 [ext_resource type="PackedScene" uid="uid://e7eirnamgwed" path="res://assets/godot-robot/3DGodotRobot.glb" id="2_nysd4"]
 [ext_resource type="AudioStream" uid="uid://cp5mgkavnj208" path="res://assets/audio/jump.wav" id="3_kqy8m"]
 [ext_resource type="AudioStream" uid="uid://dmsflhyl2qf8w" path="res://assets/audio/walk.wav" id="4_7h7r7"]
+[ext_resource type="AudioStream" uid="uid://cvet4a5ee8tyg" path="res://assets/audio/victory.wav" id="5_fp5hn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4i6ba"]
 
@@ -54,5 +55,8 @@ stream = ExtResource("3_kqy8m")
 
 [node name="WalkSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_7h7r7")
+
+[node name="VictorySFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fp5hn")
 
 [editable path="3DGodotRobot"]

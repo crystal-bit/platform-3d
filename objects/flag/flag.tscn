@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0ap0odsthgo0"]
+
+[ext_resource type="PackedScene" uid="uid://c2hxvsnvufao2" path="res://assets/platformer-kit-2.2/Models/flag.glb" id="1_0ojqi"]
+[ext_resource type="Script" path="res://objects/flag/flag.gd" id="1_i6i0y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmopq"]
+
+[node name="Flag" type="Area3D" groups=["flag"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_i6i0y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, 0)
+shape = SubResource("BoxShape3D_wmopq")
+
+[node name="flag" parent="." instance=ExtResource("1_0ojqi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
