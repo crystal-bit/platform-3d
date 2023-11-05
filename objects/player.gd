@@ -52,7 +52,13 @@ func _physics_process(delta):
 		if anims.current_animation != "Jump":
 			anims.play("Jump")
 
-	move_and_slide()
+	var collided = move_and_slide()
+	if collided:
+		var collision = get_last_slide_collision()
+		var collider = collision.get_collider()
+		if collider is Crate:
+			if collision.get_angle() > 3.0:
+				collider.hit()
 
 	if position.y < DEATH_POSITION_Y:
 		position = initial_position
