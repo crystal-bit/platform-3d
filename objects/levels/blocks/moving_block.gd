@@ -8,7 +8,7 @@ func _ready():
 
 
 func _process(delta):
-	if path_follow.get_progress_ratio() > 1.0 or path_follow.get_progress_ratio() < 0.0:
+	if path_follow.get_progress_ratio() >= 1.0 or path_follow.get_progress_ratio() <= 0.0:
 		speed = -speed
 
 	path_follow.progress_ratio += speed * delta
