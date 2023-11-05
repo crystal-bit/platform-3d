@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4esfcobx42u5"
-path="res://.godot/imported/pointer.png-fab8d517d9fe085952311f55dd458525.ctex"
+uid="uid://plfhg51due7c"
+path="res://.godot/imported/Mouse_Scroll_Down.png-8f9845ab0a6f922e65ad59f6dfa89176.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/input-overlay/assets/pointer.png"
-dest_files=["res://.godot/imported/pointer.png-fab8d517d9fe085952311f55dd458525.ctex"]
+source_file="res://addons/input-overlay/assets/Mouse_Scroll_Down.png"
+dest_files=["res://.godot/imported/Mouse_Scroll_Down.png-8f9845ab0a6f922e65ad59f6dfa89176.ctex"]
 
 [params]
 

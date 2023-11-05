@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bbg0esl80b26b"]
+
+[ext_resource type="Script" path="res://addons/input-overlay/input-overlay-config.gd" id="1_07s87"]
+
+[resource]
+script = ExtResource("1_07s87")
+horizontal_margin = 10
+vertical_margin = 10
+scale = 0.55
+anchor = 2
